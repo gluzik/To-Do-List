@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="wrapper">
+    <div class="container">
+        <div class="todo">
+            <h1 class="todo-title">To-Do List</h1>
+            <div class="todo-header">
+                <button class="todo-add__button">Add a new to-do</button>
+                <div class="todo-sort">
+                    <button class="todo-sort__button todo-sort__selected">All</button>
+                    <button class="todo-sort__button">To-Do</button>
+                    <button class="todo-sort__button">Completed</button>
+                </div>
+            </div>
+            <div class="tasks">
+                <div class="tasks__header">
+                    <p class="tasks-title">Task</p>
+                    <p class="tasks-title">Description</p>
+                    <p class="tasks-title">Category</p>
+                    <p class="tasks-title">When</p>
+                    <p class="tasks-title">Priority</p>
+                    <p class="tasks-title">Fulfillment</p>
+                </div>
+                <p class="tasks__no-found hide">task not found :(</p>
+                <div class="tasks-list">
+                </div>
+            </div>
+            <div class="form hidden">
+                <h2 class="form-title">Add a new to-do:</h2>
+                <div class="form-inputs">
+                    <div class="form-left">
+                        <div class="form-item">
+                            <p>Name:</p> <input id="form-name" class="form-input" type="text" placeholder="name for the task you’re going to do">
+                        </div>
+                        <div class="form-item">
+                            <p>Description:</p> 
+                            <textarea id="form-description" class="form-text" placeholder="a short description of the task - can be omitted"></textarea> 
+                        </div>
+                        <div class="form-item">
+                            <p>Category:</p> <input id="form-category" class="form-input" type="text" placeholder="e.g. household, school, work">
+                        </div>
+                        <div class="form-item">
+                            <p>Date:</p> <input id="form-date" class="form-input" type="date">
+                        </div>
+                        <div class="form-item">
+                            <p>Time:</p> <input id="form-time" class="form-input" type="time">
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div>
+                            <div class="form-item">
+                                <p>Priority:</p>
+                                <input list="prioritys" id="form-priority" class="form-priotiry">
+                                <datalist id="prioritys">
+                                    <option value="Low"></option>
+                                    <option value="Medium"></option>
+                                    <option value="Hard"></option>
+                                </datalist>
+                            </div>
+                            <div class="form-item">
+                                <p>Fulfillment:</p> <input id="form-fulfillment" class="form-range" type="range" min="0" max="100" step="10">
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button class="form-save">Save</button>
+                            <button class="form-cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="now-time"></div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

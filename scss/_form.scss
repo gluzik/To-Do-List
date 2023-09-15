@@ -1,0 +1,152 @@
+.hidden {
+    visibility: hidden;
+}
+
+.form {
+    position: absolute;
+    top: 115px;
+    left: 50px;
+
+    padding: 35px;
+
+    background: #fff;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+
+    &-title {
+        color: #000;
+        font-family: Jost;
+        font-size: 32px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    &-inputs {
+        display: flex;
+        justify-content: space-between;
+
+        color: #000;
+        font-family: Jost;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    &-left {
+        margin-right: 50px;
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-item {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 33px;
+
+        & p {
+            margin-right: 40px;
+        }
+    }
+
+    &-input {
+        box-sizing: border-box;
+
+        border: 1px solid #000;
+
+        margin-bottom: 33px;
+
+        width: 330px;
+        height: 33px;
+    }
+
+    &-text {
+        box-sizing: border-box;
+
+        border: 1px solid #000;
+
+        resize: none;
+        width: 330px;
+        height: 90px;
+
+        &::placeholder {
+            padding: 5px;
+        }
+    }
+
+    &-priotiry {
+        box-sizing: border-box;
+        width: 330px;
+        height: 33px;
+
+        border: 1px solid #000;
+    }
+
+    &-range {
+        width: 330px;
+        fill: #9c9c9c;
+        border: 1px solid #9c9c9c;
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 66px;
+    }
+
+    &-save {
+        padding: 10px 85px;
+
+        cursor: pointer;
+
+        background-color: #517ff6;
+        transition: 0.3s;
+
+        font-family: Jost;
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff;
+
+        border: none;
+        border-radius: 20px;
+
+        &:hover {
+            background: #fff;
+            border: 1px solid #000;
+            color: #000;
+        }
+    }
+
+    &-cancel {
+        padding: 10px 75px;
+
+        cursor: pointer;
+
+        background: #fff;
+        transition: 0.3s;
+
+        font-family: Jost;
+        font-size: 24px;
+        font-weight: 400;
+        color: #000;
+
+        border: 1px solid #000;
+        border-radius: 20px;
+
+        &:hover {
+            background: #517ff6;
+            color: #fff;
+            border: none;
+            
+        }
+    }
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
