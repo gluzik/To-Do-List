@@ -146,8 +146,9 @@ class CreateTask {
         createImgBlocks.append(createDelte);
         this.task.append(createImgBlocks);
 
+        // this.task.setAttribute("draggable", "false");
 
-        console.log(e);
+
         e.append(this.task);
         tasksNoFound();
     }
@@ -174,7 +175,7 @@ function clearAll() {
     inputDate.value = '';
     inputTime.value = '';
     inputPriority.value = '';
-    inputFulfillment.value = '50';
+    inputFulfillment.value = '10';
 }
 
 function openForm() {
@@ -232,6 +233,24 @@ sortButton.onclick = function (e) {
     }
 }
 
+document.querySelector(".tasks-drag").onclick = function (e) {
+    let tasksToDraggable = document.querySelectorAll(".item");
+    let onOrOff;
+
+    tasksToDraggable[0].draggable === true ? onOrOff = true : onOrOff = false;
+
+    tasksToDraggable.forEach(drag => {
+        if (!onOrOff) {
+            drag.draggable = true;
+        } else {
+            drag.draggable = false;
+        }
+    })
+
+
+
+}
+
 function tasksNoFound() {
     let messegeNoFound = document.querySelector(".tasks__no-found");
     if (tasksList.innerText === "") {
@@ -270,5 +289,43 @@ function askDelete(text, result) {
     div.append(divButtons);
     document.body.append(div);
 }
+
+tasksList.addEventListener('dragstart', (evt) => {
+    evt.target.classList.add("drag-selected");
+})
+
+tasksList.addEventListener('dragend', (evt) => {
+    evt.target.classList.remove("drag-selected");
+})
+
+tasksList.addEventListener('dragover', (evt) => {
+    
+    evt.preventDefault();
+
+    const activeElement = tasksList.querySelector(".drag-selected");
+
+    const curentElement = evt.target;
+
+    const isMoveable = activeElement !== curentElement && curentElement.classList.contains('item');
+
+    if(!isMoveable) {
+        return;
+    }
+
+    const nextElement = (curentElement === activeElement.nextElementSibling) ? curentElement.nextElementSibling : curentElement;
+
+    tasksList.insertBefore(activeElement, nextElement);
+});
+
+const getNextElement = (cursorPosition, currentElement) => {
+    const currentElementCoord = currentElement.getBoundingClientRect();
+    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+  
+    const nextElement = (cursorPosition < currentElementCenter) ?
+        currentElement :
+        currentElement.nextElementSibling;
+  
+    return nextElement;
+  };
 
 tasksNoFound();

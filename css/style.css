@@ -326,6 +326,10 @@ table {
   display: none;
 }
 
+.drag-selected {
+  opacity: 0.6;
+}
+
 .hidden {
   visibility: hidden;
 }
