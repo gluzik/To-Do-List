@@ -227,7 +227,9 @@ table {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-right: 85px;
+  position: sticky;
+  top: -30px;
+  background: #fff;
   margin-bottom: 20px;
 }
 .tasks-title {
@@ -247,13 +249,16 @@ table {
   width: 120px;
 }
 .tasks-title:nth-child(4) {
-  width: 85px;
+  width: 120px;
 }
 .tasks-title:nth-child(5) {
-  width: 120px;
+  width: 110px;
 }
 .tasks-title:nth-child(6) {
   width: 110px;
+}
+.tasks-edit {
+  padding: 0 13px;
 }
 .tasks__no-found {
   color: #000;
@@ -294,9 +299,6 @@ table {
   width: 110px;
   text-align: center;
 }
-.item-img img:first-child {
-  opacity: 0.5;
-}
 .item-img img {
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -322,6 +324,10 @@ table {
 
 .hide {
   display: none;
+}
+
+.drag-selected {
+  opacity: 0.6;
 }
 
 .hidden {
