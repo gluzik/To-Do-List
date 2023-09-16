@@ -6,7 +6,7 @@
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -208,7 +208,6 @@
     }
 
     &-img {
-
         & img:first-child {
         }
         & img {
@@ -242,7 +241,6 @@
 }
 
 .drag {
-
     &-selected {
         opacity: 0.6;
     }

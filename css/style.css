@@ -137,7 +137,7 @@ table {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -339,13 +339,14 @@ table {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .form {
   position: absolute;
   top: 115px;
   left: 50px;
+  max-width: 1200px;
   padding: 35px;
   background: #fff;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -599,5 +600,84 @@ input::-webkit-calendar-picker-indicator {
   100% {
     -webkit-transform: rotate(1turn);
             transform: rotate(1turn);
+  }
+}
+@media (max-width: 1200px) {
+  .form {
+    width: 920px;
+  }
+  .form-inputs {
+    font-size: 18px;
+  }
+  .form-input {
+    max-width: 250px;
+  }
+  .form-text {
+    width: 250px;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    max-width: 1050px;
+  }
+  .todo-add__button {
+    padding: 15px;
+  }
+  .form {
+    max-width: 900px;
+    left: 2%;
+  }
+  .form-inputs {
+    font-size: 18px;
+  }
+  .form-input {
+    max-width: 250px;
+  }
+  .form-text {
+    width: 250px;
+  }
+}
+@media (max-width: 930px) {
+  .container {
+    max-width: 900px;
+  }
+  .todo-add__button {
+    font-size: 18px;
+  }
+  .todo-sort__button {
+    font-size: 18px;
+    max-width: 140px;
+  }
+  .form {
+    width: 700px;
+  }
+  .form-inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 755px) {
+  .container {
+    max-width: 750px;
+  }
+  .todo-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .todo-add__button {
+    margin-bottom: 20px;
+  }
+  .todo-sort__button {
+    margin-left: 0;
+  }
+  .form {
+    width: 500px;
   }
 }

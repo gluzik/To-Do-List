@@ -1,11 +1,14 @@
 .hidden {
-    visibility: hidden;
+    // visibility: hidden;
+    display: none;
 }
 
 .form {
     position: absolute;
     top: 115px;
     left: 50px;
+
+    max-width: 1200px;
 
     padding: 35px;
 
