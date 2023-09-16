@@ -299,7 +299,7 @@ tasksList.addEventListener('dragend', (evt) => {
 })
 
 tasksList.addEventListener('dragover', (evt) => {
-    
+
     evt.preventDefault();
 
     const activeElement = tasksList.querySelector(".drag-selected");
@@ -308,7 +308,7 @@ tasksList.addEventListener('dragover', (evt) => {
 
     const isMoveable = activeElement !== curentElement && curentElement.classList.contains('item');
 
-    if(!isMoveable) {
+    if (!isMoveable) {
         return;
     }
 
@@ -320,12 +320,12 @@ tasksList.addEventListener('dragover', (evt) => {
 const getNextElement = (cursorPosition, currentElement) => {
     const currentElementCoord = currentElement.getBoundingClientRect();
     const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
-  
+
     const nextElement = (cursorPosition < currentElementCenter) ?
         currentElement :
         currentElement.nextElementSibling;
-  
+
     return nextElement;
-  };
+};
 
 tasksNoFound();
