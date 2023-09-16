@@ -110,8 +110,10 @@
     &__header {
         display: flex;
         justify-content: space-around;
+        position: sticky;
+        top: -30px;
+        background: #fff;
 
-        margin-right: 85px;
         margin-bottom: 20px;
     }
 
@@ -135,16 +137,20 @@
         }
 
         &:nth-child(4) {
-            width: 85px;
+            width: 120px;
         }
 
         &:nth-child(5) {
-            width: 120px;
+            width: 110px;
         }
 
         &:nth-child(6) {
             width: 110px;
         }
+    }
+
+    &-edit {
+        padding: 0 13px;
     }
 
     &__no-found {
@@ -195,7 +201,6 @@
     &-img {
 
         & img:first-child {
-            opacity: 0.5;
         }
         & img {
             transition: 0.2s;
