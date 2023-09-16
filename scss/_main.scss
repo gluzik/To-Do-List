@@ -149,8 +149,17 @@
         }
     }
 
-    &-edit {
-        padding: 0 13px;
+    &-drag {
+        margin: 0 13px;
+        transition: 0.3s;
+
+        &:hover {
+            background: #517ff6;
+        }
+
+        &-on {
+            background: #517ff6;
+        }
     }
 
     &__no-found {

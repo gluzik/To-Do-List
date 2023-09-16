@@ -257,8 +257,16 @@ table {
 .tasks-title:nth-child(6) {
   width: 110px;
 }
-.tasks-edit {
-  padding: 0 13px;
+.tasks-drag {
+  margin: 0 13px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.tasks-drag:hover {
+  background: #517ff6;
+}
+.tasks-drag-on {
+  background: #517ff6;
 }
 .tasks__no-found {
   color: #000;

@@ -20,6 +20,20 @@ function currentTime() {
     day < 10 ? day = '0' + day : day;
 
     dateInputMin.setAttribute("min", `${years}-${month}-${day}`);
+
+    let timeInputMin = document.querySelector("#form-time");
+    if (dateInputMin.value === `${years}-${month}-${day}`) {
+        hours < 10 ? hours = '0' + hours : hours;
+        timeInputMin.setAttribute("min", `${hours}:${minutes}`);
+        if (timeInputMin.value === '') {
+        } else {
+            if (timeInputMin.value < timeInputMin.min) {
+                timeInputMin.value = `${hours}:${minutes}`;
+            }
+        }
+    } else {
+        timeInputMin.removeAttribute("min");
+    }
 }
 
 setInterval(currentTime, 500);
@@ -241,14 +255,13 @@ document.querySelector(".tasks-drag").onclick = function (e) {
 
     tasksToDraggable.forEach(drag => {
         if (!onOrOff) {
+            e.target.classList.add("tasks-drag-on");
             drag.draggable = true;
         } else {
+            e.target.classList.remove("tasks-drag-on");
             drag.draggable = false;
         }
     })
-
-
-
 }
 
 function tasksNoFound() {
@@ -277,6 +290,15 @@ function askDelete(text, result) {
             div.remove();
             return result(true);
         } else if (e.target.classList.contains("ask-false")) {
+            div.remove();
+            return result(false);
+        }
+    })
+    document.body.addEventListener('keydown', (e) => {
+        if (e.key === "Enter") {
+            div.remove();
+            return result(true);
+        } else if (e.key === "Escape") {
             div.remove();
             return result(false);
         }
